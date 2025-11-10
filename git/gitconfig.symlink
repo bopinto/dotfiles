@@ -1,19 +1,39 @@
-[credential]
-	helper = osxkeychain
-
-[delta]
-	line-numbers = true
-	side-by-side = true
-[http]
-	postBuffer = 157286400
+[color]
+  ui = true
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+	excludesfile = $HOME/.gitignore
+	autocrlf = input
+  editor = vim
+	ignorecase = false
+	pager = delta
+[init]
+  templatedir = ~/.dotfiles/git/templates
+[help]
+  autocorrect = 1
+[mergetool]
+  keepBackup = false
+[merge]
+  tool = vimdiff
 [user]
 	name = Bernardo Oliveira Pinto
-[pull]
-	rebase = true
-[core]
-	autocrlf = input
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+[difftool]
+	tool = vimdiff
+	prompt = false
+[push]
+	default = simple
+[http]
+	proxy = 
+[credential]
+	helper = osxkeychain
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
